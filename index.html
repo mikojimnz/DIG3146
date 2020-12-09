@@ -1,0 +1,463 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Around Us</title>
+    <meta name="description" content="DIG3146 Social Platform Prototype">
+    <meta name="author" content="Miko Jimenez">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <div id="splash">
+        <div class="row">
+            <div class="col col-12 titles animate__animated animate__fadeIn">
+                <h1 class="text-center">Ar<i class="icon icon-earth"></i>und Us</h1>
+                <h4 class="text-center">Journey Together</h4>
+                <div class="row" data-toggle="tooltip" id="splash-tooltip" data-placement="bottom" title="This is the splash screen. Users would login or signup from this screen.">
+                    <div class="col-2"></div>
+                    <div class="col-8 text-center">
+                        <button type="button" class="btn btn-success btn-lg" id="enter-btn">
+                            <h5>Begin Exploring</h5>
+                        </button>
+                    </div>
+                </div>
+                <br>
+                <p class="text-center" id="credit-tooltip" data-toggle="tooltip" data-placement="top" data-html="true" title="Made with Bootstrap 4, Popper JS, Google My Maps, IcoMoon, Animate.css <hr> Images photographed by Miko Jimenez. Copyright 2014-2020 All Rights Reserved.">By Miko Jimenez<br>DIG3146</p>
+                <p class="helper text-center" id="intro-tooltip" data-toggle="tooltip" data-placement="top" data-html="true" title="Use your cursosr to show tooltips on various elements. <hr> Text in this color indicates supplementary information not part of the main product. <hr> This page was created with responsive layout in mind. The mobile version can be accessed using the button in the main page or shrinking the width of your browser.">This prototype was designed for Desktop. Hover over me for more info.</p>
+            </div>
+        </div>
+    </div>
+
+    <header id="header" class="animate__animated animate__fadeInDown d-none">
+        <div class="row" id="main-tooltip" data-toggle="tooltip" data-placement="bottom" data-html="true" title="This it the main page. <hr> The main feature of this platform is it's map interface. <strong>Map Markers</strong> indicate a post made at this location. <strong>Lines</strong> indacate a <i>Journey</i>, a collection of chronological posts showing the distance covered.<hr> Users can see the pins from their friends, what's trending, or public posts in a set time period.<hr> Note: This prototype is using Google My Maps. Clicking on map elements does not represent the intended design.">
+            <div class="col col-6">
+                <div class="row">
+                    <div class="col col-1 pr-1">
+                        <img src="images/pin.png" alt="pin" class="pin-logo float-right">
+                    </div>
+                    <div class="col pl-0">
+
+                        <h1 class="title">Ar<i class="icon icon-earth" style="font-size: 32px;"></i>und Us</h1>
+                        <h5 class="tagline">Journey Together</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-6">
+                <p class="float-right">
+                    <a href="javascript:void(0);" id="mobile" class="helper">Launch Mobile Version <i class="icon icon-mobile"></i></a>
+                    <span data-toggle="modal" data-target="#profile-modal"><a href="javascript:void(0);" id="profile" data-toggle="tooltip" data-placement="top" title="Open Profile"><img src="images/profiles/user-0.png" alt="Profile image" class="rounded-circle" width="50px"></a></span>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <div id="map" class="animate__animated animate__fadeIn">
+        <button type="button" class="btn btn-primary btn-circle animate__animated animate__fadeInRight" id="ar-btn" data-toggle="tooltip" data-placement="left" data-html="true" title="Enter AR Mode (Simulated) <hr> View Pins and Journeys in the real world.<hr>This would be the key selling point for this platform: Utilizing modern augmented reality features in today's phones to interact with the world."><i class="icon icon-camera"></i>
+        </button>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=18P_L13E2ksH0EW5iBcs4IXHZ22UA3Mme" width="1920px" height="108%"></iframe>
+    </div>
+
+    <div id="ar" class="animate__animated animate__fadeIn">
+        <button type="button" class="btn btn-primary btn-circle animate__animated animate__fadeInRight d-none" id="map-btn" data-toggle="tooltip" data-placement="left" data-html="true" title="Exit AR Mode"><i class="icon icon-map"></i>
+        </button>
+        <img src="images/AR.jpg" id="ar-base-layer" alt="AR Image">
+    </div>
+
+    <footer class="animate__animated animate__fadeInUp d-none" id="footer">
+        <div>
+            <div class="bottom-controls text-center">
+                <span data-toggle="modal" data-target="#friends-modal"><a href="javascript:void(0);" id="friends" data-toggle="tooltip" data-placement="top" title="Open Friends List"><i class="icon icon-address-book"></i></a></span>
+                <span data-toggle="modal" data-target="#search-modal"><a href="javascript:void(0);" id="search" data-toggle="tooltip" data-placement="top" title="Open Search Page"><i class="icon icon-search"></i></a></span>
+                <a href="javascript:void(0);" id="add" data-toggle="tooltip" data-placement="top" data-html="true" title="Add new post (Not Implemented) <hr> Share a new Pin or Journey to the map."><i class="icon icon-plus"></i></a>
+                <a href="javascript:void(0);" id="locate" data-toggle="tooltip" data-placement="top" data-html="true" title="Current Location (Not Implemented)<hr> Reposition map to current location."><i class="icon icon-compass"></i></a>
+                <a href="javascript:void(0);" id="random" data-toggle="tooltip" data-placement="top" data-html="true" title="Go to random place (Not Implemented) <hr> Goes to a random location on the map where interesting activity is happening."><i class="icon icon-dice"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div>
+        <div class="modal fade" id="profile-modal" tabindex="-1" role="dialog" aria-labelledby="profile-modal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" data-toggle="tooltip" data-placement="bottom" title="User Handle">@mikojimnz_test</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="images/profiles/test-user-pin.png" alt="" class="img-fluid center" style="max-width: 200px;" data-toggle="tooltip" data-placement="bottom" title="Your profile image.">
+                        <br>
+                        <div data-toggle="tooltip" data-placement="bottom" title="Basic information and statistics">
+                            <h3 class="text-center">Miko Jimenez</h3>
+                            <p class="text-center">Orlando, FL, USA</p>
+                            <p class="text-center">123 Pins / 45 Journeys</p>
+                        </div>
+
+                        <ul class="nav nav-tabs mb-4 mt-5">
+                            <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="This tab shows all of your Pins and Journeys in the world.">
+                                <a class="nav-link active" id="map-tab" data-toggle="tab" href="#profile-map" role="tab" aria-controls="Map" aria-selected="true">Map</a>
+                            </li>
+                            <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="This tab shows all of your pins in order.">
+                                <a class="nav-link" id="pins-tab" data-toggle="tab" href="#profile-pins" role="tab" aria-controls="Pins" aria-selected="false">Pins</a>
+                            </li>
+                            <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="This tab shows all of your Journey created.">
+                                <a class="nav-link" id="journeys-tab" data-toggle="tab" href="#profile-journeys" role="tab" aria-controls="Journeys" aria-selected="false">Journeys</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="profile-map" role="tabpanel" aria-labelledby="map-tab">
+                                <div>
+                                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=18P_L13E2ksH0EW5iBcs4IXHZ22UA3Mme" width="100%" height="500px"></iframe>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="profile-pins" role="tabpanel" aria-labelledby="pins-tab">
+                                <div class="row mb-3">
+                                    <div class="col col-4">
+                                        <img src="images/thumb-1.png" alt="" class="rounded img-fluid">
+                                    </div>
+                                    <div class="col col-4">
+                                        <img src="images/thumb-2.png" alt="" class="rounded img-fluid">
+                                    </div>
+                                    <div class="col col-4">
+                                        <img src="images/thumb-3.png" alt="" class="rounded img-fluid">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col col-4">
+                                        <img src="images/thumb-4.png" alt="" class="rounded img-fluid">
+                                    </div>
+                                    <div class="col col-4">
+                                        <img src="images/thumb-5.png" alt="" class="rounded img-fluid">
+                                    </div>
+                                    <div class="col col-4">
+                                        <img src="images/thumb-6.png" alt="" class="rounded img-fluid">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col col-4">
+                                        <img src="images/thumb-7.png" alt="" class="rounded img-fluid">
+                                    </div>
+                                    <div class="col col-4">
+                                        <img src="images/thumb-8.png" alt="" class="rounded img-fluid">
+                                    </div>
+                                    <div class="col col-4">
+                                        <img src="images/thumb-9.png" alt="" class="rounded img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile-journeys" role="tabpanel" aria-labelledby="journeys-tab">
+                                <div class="row mb-3">
+                                    <div class="col col-2">
+                                        <img src="images/thumb-10.png" alt="" class="rounded-circle img-fluid">
+                                    </div>
+                                    <div class="col col-10">
+                                        <h5>Fall Trip</h5>
+                                        <p>November 20-27, 2020 | 54 pins</p>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col col-2">
+                                        <img src="images/thumb-12.png" alt="" class="rounded-circle img-fluid">
+                                    </div>
+                                    <div class="col col-10">
+                                        <h5>Northern hike</h5>
+                                        <p>February 12-15, 2019 | 32 pins</p>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col col-2">
+                                        <img src="images/thumb-14.png" alt="" class="rounded-circle img-fluid">
+                                    </div>
+                                    <div class="col col-10">
+                                        <h5>Philippines Trip</h5>
+                                        <p>July 3-21, 2018 | 19 pins</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="friends-modal" tabindex="-1" role="dialog" aria-labelledby="friends-modal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" data-toggle="tooltip" data-placement="bottom" title="This page shows who you follow and follows you.">
+                        <h5 class="modal-title">Friends</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="nav nav-tabs mb-4">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="following-tab" data-toggle="tab" href="#friends-following" role="tab" aria-controls="Following" aria-selected="true">Following: 999</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="followers-tab" data-toggle="tab" href="#friends-followers" role="tab" aria-controls="Followers" aria-selected="true">Followers: 999</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="friends-following" role="tabpanel" aria-labelledby="following-tab">
+                                <div class="mb-4" data-toggle="tooltip" data-placement="bottom" title="Search Bar">
+                                    <i class="icon icon-search"></i>
+                                    <input type="text" placeholder="Montana, Germany, etc.">
+                                </div>
+
+                                <div class="row" data-toggle="tooltip" data-placement="bottom" title="Clicking a profile would bring up a profile page similar to the sample profile.">
+                                    <div class="col col-2">
+                                        <img src="images/profiles/user-1.png" alt="Friend Profile Image" class="rounded-circle img-fluid">
+                                    </div>
+                                    <div class="col col-6">
+                                        <h4>@dummy_user_1</h4>
+                                        <p>Chicago, USA</p>
+                                    </div>
+                                    <div class="col col-4">
+                                        <button type="button" class="btn btn-outline-danger float-right">
+                                            Unfollow
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-2">
+                                        <img src="images/profiles/user-5.png" alt="Friend Profile Image" class="rounded-circle img-fluid">
+                                    </div>
+                                    <div class="col col-6" data-toggle="tooltip" data-placement="bottom" title="This shows their current location.">
+                                        <h4>@dummy_user_2</h4>
+                                        <p>Dallas, USA</p>
+                                    </div>
+                                    <div class="col col-4">
+                                        <button type="button" class="btn btn-outline-danger float-right">
+                                            Unfollow
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-2">
+                                        <img src="images/profiles/user-2.png" alt="Friend Profile Image" class="rounded-circle img-fluid">
+                                    </div>
+                                    <div class="col col-6">
+                                        <h4>@dummy_user_3</h4>
+                                        <p>Los Angeles, USA</p>
+                                    </div>
+                                    <div class="col col-4">
+                                        <button type="button" class="btn btn-outline-danger float-right">
+                                            Unfollow
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="friends-followers" role="tabpanel" aria-labelledby="follower-tab">
+                                <div class="mb-4" data-toggle="tooltip" data-placement="bottom" title="Search Bar">
+                                    <i class="icon icon-search"></i>
+                                    <input type="text" placeholder="Montana, Germany, etc.">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col col-2">
+                                        <img src="images/profiles/user-3.png" alt="Friend Profile Image" class="rounded-circle img-fluid">
+                                    </div>
+                                    <div class="col col-6">
+                                        <h4>@dummy_user_1</h4>
+                                        <p>London, UK</p>
+                                    </div>
+                                    <div class="col col-4">
+                                        <button type="button" class="btn btn-outline-danger float-right">
+                                            Block
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-2">
+                                        <img src="images/profiles/user-4.png" alt="Friend Profile Image" class="rounded-circle img-fluid">
+                                    </div>
+                                    <div class="col col-6">
+                                        <h4>@dummy_user_2</h4>
+                                        <p>Sydney, Australia</p>
+                                    </div>
+                                    <div class="col col-4">
+                                        <button type="button" class="btn btn-outline-danger float-right">
+                                            Block
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-2">
+                                        <img src="images/profiles/user-6.png" alt="Friend Profile Image" class="rounded-circle img-fluid">
+                                    </div>
+                                    <div class="col col-6">
+                                        <h4>@dummy_user_3</h4>
+                                        <p>Cape Town, South Africa</p>
+                                    </div>
+                                    <div class="col col-4">
+                                        <button type="button" class="btn btn-outline-danger float-right">
+                                            Block
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-labelledby="search-modal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" data-toggle="tooltip" data-placement="bottom" title="This page allows you to search for different users, places, and content.">
+                        <h5 class="modal-title">Search</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div data-toggle="tooltip" data-placement="bottom" title="Search Bar">
+                            <i class="icon icon-search"></i>
+                            <input type="text" placeholder="Montana, Germany, etc.">
+                        </div>
+
+                        <h4 class="mt-5">Trending Now</h4>
+                        <div data-toggle="tooltip" data-placement="bottom" title="The top trending items right now.">
+                            <h5 class="mb-3">Journeys</h5>
+                            <div class="row mb-3">
+                                <div class="col col-1">
+                                    <h1>1.</h1>
+                                </div>
+                                <div class="col col-2">
+                                    <img src="images/thumb-15.png" alt="" class="rounded-circle img-fluid">
+                                </div>
+                                <div class="col col-8">
+                                    <h5>Backpacking Across Europe</h5>
+                                    <p>@dummy_user_1 | 49 pins</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col col-1">
+                                    <h1>2.</h1>
+                                </div>
+                                <div class="col col-2">
+                                    <img src="images/thumb-16.png" alt="" class="rounded-circle img-fluid">
+                                </div>
+                                <div class="col col-8">
+                                    <h5>New york</h5>
+                                    <p>@dummy_user_2 | 23 pins</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col col-1">
+                                    <h1>3. </h1>
+                                </div>
+                                <div class="col col-2">
+                                    <img src="images/thumb-2.png" alt="" class="rounded-circle img-fluid">
+                                </div>
+                                <div class="col col-8">
+                                    <h5>Yellowstone</h5>
+                                    <p>@dummy_user_3, 2020 | 64 pins</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div data-toggle="tooltip" data-placement="top" title="Recommended posts.">
+                            <h5>Explore Pins</h5>
+                            <div class="row mb-3">
+                                <div class="col col-4">
+                                    <img src="images/thumb-12.png" alt="" class="rounded img-fluid">
+                                </div>
+                                <div class="col col-4">
+                                    <img src="images/thumb-1.png" alt="" class="rounded img-fluid">
+                                </div>
+                                <div class="col col-4">
+                                    <img src="images/thumb-7.png" alt="" class="rounded img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div data-toggle="tooltip" data-placement="top" title="Recommended users to follow.">
+                            <h4 class="mt-5 mb-3">Discover New Adventurers</h4>
+                            <div class="row mb-3">
+                                <div class="col col-4">
+                                    <img src="images/profiles/user-4.png" alt="" class="rounded-circle img-fluid">
+                                </div>
+                                <div class="col col-4">
+                                    <img src="images/profiles/user-5.png" alt="" class="rounded-circle img-fluid">
+                                </div>
+                                <div class="col col-4">
+                                    <img src="images/profiles/user-6.png" alt="" class="rounded-circle img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YQ5NHVZ2SV"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-YQ5NHVZ2SV');
+
+</script>
+<script type="text/javascript">
+    document.write('<div align="center">');
+    var sc_project = 11982237;
+    var sc_invisible = 1;
+    var sc_security = "b574ac9a";
+
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+<script>
+    document.write('</div>');
+
+</script>
+<script id="mcjs">
+    ! function(c, h, i, m, p) {
+        m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
+    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/3144d21cc0220cec0527b0ac2/894fc138bf63beba45e6ac06b.js");
+
+</script>
+
+</html>

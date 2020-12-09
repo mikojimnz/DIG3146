@@ -1,0 +1,261 @@
+@font-face {
+    font-family: "Montharo";
+    src: url(../fonts/MontharoRegular.ttf);
+}
+
+@font-face {
+    font-family: "MontharoInky";
+    src: url(../fonts/MontharoInky.ttf);
+}
+
+* {
+    /*    border: #f00 1px solid;*/
+}
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: rgba(0, 25, 80, 1);
+    text-decoration: none;
+}
+
+body {
+    color: #fff;
+    background-color: #1f1f1f;
+    font-family: "Montharo", sans-serif;
+
+    overflow-y: hidden;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    margin-left: 33%;
+    margin-right: 33%;
+    z-index: -1;
+}
+
+h1 {
+    font-family: "MontharoInky";
+    word-spacing: -10px;
+}
+
+h1 > .icon {
+    font-size: 45px;
+}
+
+header {
+    background-color: rgba(0, 25, 80, 0.5);
+
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    z-index: 2;
+}
+
+header > .row {
+    padding-top: 15px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+input {
+    width: 90%;
+}
+
+p {
+    font-size: 18px;
+}
+
+#ar {
+    display: block;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+}
+
+#ar-base-layer {
+    height: 100vh;
+    width: auto;
+}
+
+#ar-btn {
+    display: none;
+    z-index: 5;
+
+    position: fixed;
+    bottom: 12%;
+    right: 10px;
+}
+
+#enter-btn {
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.75);
+    width: 250px;
+}
+
+#map-btn {
+    position: fixed;
+    bottom: 12%;
+    right: 10px;
+}
+
+#map {
+    height: 100vh;
+    width: 110vh;
+
+    position: absolute;
+    top: -60px;
+    z-index: -2;
+}
+
+#splash {
+    background-color: #001950;
+    background-image: url(../images/splash-bg.JPG);
+    background-size: cover;
+    background-position: center center;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
+
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.ar-pin {
+    position: absolute;
+    width: 50px;
+    height: auto;
+}
+
+.bottom-controls {
+    background-color: rgba(0, 25, 80, 0.5);
+
+    display: table;
+    height: 40px;
+    margin-bottom: 20px;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.bottom-controls > a,
+.bottom-controls > span {
+    font-size: 30px;
+
+    display: table-cell;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    padding: 1px 16px;
+    border-radius: 35px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.btn-circle > i {
+    line-height: 1.5;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.helper,
+.tooltip-inner {
+    color: #eda300;
+    text-align: left;
+}
+
+.icon-user {
+    font-size: 40px;
+}
+
+.modal-content {
+    background-color: rgba(0, 25, 80, 0.7);
+}
+
+.modal-title {
+    word-spacing: normal;
+}
+
+.pin-logo {
+    height: 60px;
+    width: auto;
+}
+
+.tagline {
+    font-size: 14px;
+
+    margin-top: -10px;
+}
+
+.title {
+    font-size: 2em;
+}
+
+.title > .icon-earth:before {
+    font-size: 0.8em;
+}
+
+.titles {
+    padding-top: 35vh;
+    font-size: 50px;
+}
+
+.titles > h1 {
+    font-family: "MontharoInky";
+    font-size: 60px;
+}
+
+.titles > h3 {
+    font-size: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        margin-left: 12%;
+        margin-right: 0%;
+    }
+
+    header > .row {
+        padding-left: 8%;
+        padding-right: 5%;
+    }
+
+    #ar-btn {
+        display: block;
+    }
+
+    #mobile {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    footer {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    header > .row {
+        padding-top: 15px;
+        padding-left: 5%;
+        padding-right: 2%;
+    }
+
+    #ar-btn {
+        display: none
+    }
+}
